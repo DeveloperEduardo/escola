@@ -1,0 +1,74 @@
+<?php include MY_FOLDER . "/../app/View/Layouts/header.phtml"; ?>
+
+
+<form  class="form-horizontal" method="post">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Atualizar Usuario</legend>
+
+        <?php if (!empty($errors)): ?>
+            <div class="alert alert-danger">
+                <strong>ERRO!</strong>
+                <?php foreach ($errors as $message): ?>
+                    <?php echo $message ?> <br/>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <input  name="id" 
+                value="<?php echo $tmp_user->id ?>" 
+                type="hidden" class="pull-right" >
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Nome</label>  
+            <div class="col-md-4">
+                <!-- deixa nome fixo apos condicao -->
+                <input  id="textinput" name="name" value="<?php echo $tmp_user->name ?>" type="text" placeholder="ex: maria severina" class="form-control input-md">
+                <span class="help-block">help</span>  
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">cpf</label>  
+            <div class="col-md-4">
+                <input  id="textinput" name="cpf" value="<?php echo $tmp_user->cpf ?>"type="text" placeholder="placeholder" class="form-control input-md">
+                <span class="help-block">help</span>  
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">e-mail</label>  
+            <div class="col-md-4">
+                <input id="textinput" name="email" value="<?php echo $tmp_user->email ?>" 
+                        placeholder="ex: 0000000" class="form-control input-md">
+                <span class="help-block">help</span>  
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="passwordinput">senha</label>
+            <div class="col-md-4">
+                <input required id="passwordinput" name="password" value="<?php echo $tmp_user->password ?>" type="password" placeholder="ex: minimo 5" class="form-control input-md">
+                <span class="help-block">help</span>
+            </div>
+        </div>
+
+
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+<?php include MY_FOLDER . "/../app/View/Layouts/footer.phtml"; ?>

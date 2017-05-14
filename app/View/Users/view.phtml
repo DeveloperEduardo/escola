@@ -1,0 +1,16 @@
+<?php include MY_FOLDER . "/../app/View/Layouts/header.phtml"; ?>
+
+<div class="container" > 
+    <h2>
+        <?php echo $user_exame->name ?>
+    </h2>
+    
+    <div id="chartContainer" style="height: 400px; width: 100%;"></div>s
+    
+</div>
+
+<script>
+    var notes = <?php echo json_encode($notes); ?>;
+</script>
+
+<?php include MY_FOLDER . "/../app/View/Layouts/footer.phtml"; ?>
